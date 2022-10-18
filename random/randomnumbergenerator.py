@@ -15,7 +15,7 @@ def is_valid(num):
             return True
     return False
 
-counter = 1
+counter = 0
 while True:
      num = input()
      
@@ -32,11 +32,12 @@ while True:
          counter += 1
          print("Ваше число меньше загаданного, попробуйте еще разок")
      else:
+         counter += 1
          print("Вы угадали, поздравляем!","Количество попыток :", counter)
          print("Хотите сыграть еще раз? Да или Нет?")
          responce = input().lower()
          if responce == "да":
             num1 = random.randint(1, n)
+            counter = 0
          else:     
              break  
-print("Спасибо, что играли в числовую угадайку. Еще увидимся...")
