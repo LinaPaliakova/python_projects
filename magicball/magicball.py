@@ -13,5 +13,4 @@ while True:
          continue
      else:
          print("Возвращайся, если возникнут вопросы!")
-         break
-print("Возвращайся если возникнут вопросы!")        
+         break 
