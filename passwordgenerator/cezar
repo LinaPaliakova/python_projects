@@ -1,0 +1,62 @@
+print("Добро подаловать в шифр Цезаря")
+direction = input("Выберите направление: шифрование или дешифрование")
+lang = input("Язык текста, который вы будете использовать: ru / eng?")
+key = int(input("Введите шаг сдвига: "))
+eng_lower_alphabet = 'abcdefghijklmnopqrstuvwxyz'
+eng_upper_alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+rus_lower_alphabet = "абвгдежзийклмнопрстуфхцчшщъыьэюя"
+rus_upper_alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+
+
+
+
+    
+def decypher():
+    result = ''
+    for i in s:
+       if i in '!?,. ':
+          result += i 
+          continue    
+       if lang == 'eng':
+          if i == i.lower():
+              result += eng_lower_alphabet[(eng_lower_alphabet.index(i) - key) % len(eng_lower_alphabet)]
+          else:
+              result += eng_upper_alphabet[(eng_upper_alphabet.index(i) - key) % len(eng_upper_alphabet)]
+       if lang == 'ru':
+          if i == i.lower():
+              result += rus_lower_alphabet[(rus_lower_alphabet.index(i) - key) % len(rus_lower_alphabet)]
+          else:
+              result += rus_upper_alphabet[(rus_upper_alphabet.index(i) - key) % len(rus_upper_alphabet)]
+    return result
+   
+   
+def cypher():
+    result = ''
+    for i in s:
+       if i in '!?,. ':
+          result += i 
+          continue    
+       if lang == 'eng':
+          if i == i.lower():
+              result += eng_lower_alphabet[(eng_lower_alphabet.index(i) + key) % len(eng_lower_alphabet)]
+          else:
+              result += eng_upper_alphabet[(eng_upper_alphabet.index(i) + key) % len(eng_upper_alphabet)]
+       if lang == 'ru':
+          if i == i.lower():
+              result += rus_lower_alphabet[(rus_lower_alphabet.index(i) + key) % len(rus_lower_alphabet)]
+          else:
+              result += rus_upper_alphabet[(rus_upper_alphabet.index(i) + key) % len(rus_upper_alphabet)]
+    return result  
+   
+while True:
+    print("Введите ваше предложение: ")
+    s =  input()
+    
+    if direction == 'шифрование':
+        print(cypher())
+        print("Увидимся еще!")
+        break
+    else:
+        print(decypher())
+        print("Увидимся еще!")
+        break
